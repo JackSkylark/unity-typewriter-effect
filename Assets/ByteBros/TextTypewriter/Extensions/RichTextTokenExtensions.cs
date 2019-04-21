@@ -1,12 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using ByteBros.Common.RichText;
 
 namespace ByteBros.Typewriter.Extensions
 {
     public static class RichTextTokenExtensions
     {
+        private const string TagNameRegex = "<\\s*(\\w+)[^>]*>";
+        private static readonly List<string> UnityTagNames = new List<string>()
+        {
+            "b",
+            "i",
+            "size",
+            "color"
+        };
+
+        public static string GetRenderedString(
+            this IEnumerable<RichTextToken> tokens)
+        {
+            var values = tokens
+                .GetRenderableTokens()
+                .Select(x => x.Value)
+                .ToList();
+
+            return string.Join("", values);
+        }
+
+        public static List<RichTextToken> GetRenderableTokens(
+            this IEnumerable<RichTextToken> tokens)
+        {
+            return tokens.Where(x =>
+                    x.IsTagToken()
+                        ? UnityTagNames.Contains(x.GetTagName())
+                        : true)
+                .ToList();
+        }
+
+        public static bool IsTagToken(
+            this RichTextToken token)
+        {
+            return token.Type == RichTextTokenType.OpenTag ||
+                token.Type == RichTextTokenType.CloseTag;
+        }
+
+        public static string GetTagName(
+            this RichTextToken token)
+        {
+            if (!token.IsTagToken())
+            {
+                throw new ArgumentException(nameof(token));
+            }
+
+            var pattern = new Regex(TagNameRegex);
+            var matches = pattern.Matches(token.Value);
+
+            if (matches.Count <= 0)
+            {
+                return null;
+            }
+
+            return matches[0].Groups[1].Value;
+        }
+
         public static string GetRichText(
             this IEnumerable<RichTextToken> tokens,
             int visibleCharacterIndex)

@@ -29,12 +29,12 @@ namespace ByteBros.Typewriter.Examples
             _testTextTyper.PrintCompleted.AddListener(this.HandlePrintCompleted);
             _testTextTyper.CharacterPrinted.AddListener(this.HandleCharacterPrinted);
 
-            _dialogueLines.Enqueue("Hello! My name is... <delay=0.5>NPC</delay>. Got it, <i>bub</i>?");
+            _dialogueLines.Enqueue("Hello <i>World</i>!");
             _dialogueLines.Enqueue("You can <b>use</b> <i>uGUI</i> <size=40>text</size> <size=20>tag</size> and <color=#ff0000ff>color</color> tag <color=#00ff00ff>like this</color>.");
             _dialogueLines.Enqueue("bold <b>text</b> test <b>bold</b> text <b>test</b>");
             _dialogueLines.Enqueue("You can <size=40>size 40</size> and <size=20>size 20</size>");
             _dialogueLines.Enqueue("You can <color=#ff0000ff>color</color> tag <color=#00ff00ff>like this</color>.");
-            _dialogueLines.Enqueue("Sample Shake Animations: <shake=lightrot>Light Rotation</shake>, <shake=lightpos>Light Position</shake>, <shake=fullshake>Full Shake</shake>\nSample Curve Animations: <curve=slowsine>Slow Sine</curve>, <curve=bounce>Bounce Bounce</curve>, <curve=crazyflip>Crazy Flip</curve>");
+            //_dialogueLines.Enqueue("Sample Shake Animations: <shake=lightrot>Light Rotation</shake>, <shake=lightpos>Light Position</shake>, <shake=fullshake>Full Shake</shake>\nSample Curve Animations: <curve=slowsine>Slow Sine</curve>, <curve=bounce>Bounce Bounce</curve>, <curve=crazyflip>Crazy Flip</curve>");
             ShowScript();
         }
 

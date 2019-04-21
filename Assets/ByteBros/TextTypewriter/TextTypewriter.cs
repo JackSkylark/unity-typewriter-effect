@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ByteBros.Common.RichText;
+using ByteBros.Typewriter.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,7 +13,7 @@ namespace ByteBros.Typewriter
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextTypewriter : MonoBehaviour
     {
-        private const float PrintDelaySetting = 0.02f;
+        private const float PrintDelaySetting = 0.04f;
         private const float PunctuationDelayMultiplier = 8f;
 
         private static readonly List<char> PunctutationCharacters = new List<char>
@@ -63,7 +64,7 @@ namespace ByteBros.Typewriter
             var tokenizer = new RichTextTokenizer();
             var tokens = tokenizer.Tokenize(text).ToList();
 
-            TextComponent.text = text;
+            TextComponent.text = tokens.GetRenderedString();
             TextComponent.maxVisibleCharacters = 0;
 
             
