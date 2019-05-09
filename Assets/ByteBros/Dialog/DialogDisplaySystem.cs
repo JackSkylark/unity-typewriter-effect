@@ -1,6 +1,6 @@
-﻿using ByteBros.Common.Events;
-using ByteBros.Common.Variables;
+﻿using ByteBros.Events;
 using ByteBros.Typewriter;
+using ByteBros.Variables;
 using UnityEngine;
 
 namespace ByteBros.Dialog
@@ -24,7 +24,7 @@ namespace ByteBros.Dialog
 
         private Actor _currentActor = null;
         private GameObject _dialogComponentWrapper = null;
-        private TextTypewriter _dialogComponentTypewriter = null;
+        private Typewriter.TextTypewriter _dialogComponentTypewriter = null;
         private bool _dialogLineComplete = true;
 
         public void ShowScript()
@@ -65,7 +65,7 @@ namespace ByteBros.Dialog
             _dialogComponentWrapper = dialog;
             _dialogComponentTypewriter = _dialogComponentWrapper
                     .transform
-                    .GetComponentInChildren<TextTypewriter>();
+                    .GetComponentInChildren<Typewriter.TextTypewriter>();
         }
 
         private void Update()

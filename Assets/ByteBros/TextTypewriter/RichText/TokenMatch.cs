@@ -1,4 +1,4 @@
-﻿namespace ByteBros.Common.RichText
+﻿namespace ByteBros.TextTypewriter.RichText
 {
     public class TokenMatch
     {

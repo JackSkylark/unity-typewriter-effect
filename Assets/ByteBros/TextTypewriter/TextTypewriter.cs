@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using ByteBros.Common.RichText;
+using ByteBros.TextTypewriter.RichText;
 using ByteBros.Typewriter.Extensions;
 using TMPro;
 using UnityEngine;

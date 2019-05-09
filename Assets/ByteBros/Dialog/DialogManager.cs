@@ -1,10 +1,10 @@
-﻿using ByteBros.Common.Events;
-using ByteBros.Common.Variables;
-using Exodrifter.Rumor.Engine;
+﻿using Exodrifter.Rumor.Engine;
 using Exodrifter.Rumor.Nodes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ByteBros.Events;
+using ByteBros.Variables;
 using UnityEngine;
 
 namespace ByteBros.Dialog

@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace ByteBros.Common.Events
+namespace ByteBros.Events
 {
     [CreateAssetMenu(menuName = "GameEvent")]
     public class GameEvent : ScriptableObject
@@ -10,6 +9,12 @@ namespace ByteBros.Common.Events
         [SerializeField]
         private List<GameEventListener> listeners =
             new List<GameEventListener>();
+
+        private void OnEnable()
+        {
+            listeners = 
+                new List<GameEventListener>();
+        }
 
         public void Raise()
         {

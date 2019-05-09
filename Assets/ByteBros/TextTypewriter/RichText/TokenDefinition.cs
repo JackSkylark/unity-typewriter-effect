@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace ByteBros.Common.RichText
+namespace ByteBros.TextTypewriter.RichText
 {
     public class TokenDefinition
     {

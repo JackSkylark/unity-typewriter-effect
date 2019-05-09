@@ -1,7 +1,7 @@
-﻿using ByteBros.Common.Variables;
-using ByteBros.Dialog;
+﻿using ByteBros.Dialog;
 using System.Collections;
 using System.Collections.Generic;
+using ByteBros.Variables;
 using UnityEngine;
 
 namespace ByteBros.Typewriter.Examples

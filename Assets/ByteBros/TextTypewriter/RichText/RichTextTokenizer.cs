@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ByteBros.Common.RichText
+namespace ByteBros.TextTypewriter.RichText
 {
     public class RichTextTokenizer
     {

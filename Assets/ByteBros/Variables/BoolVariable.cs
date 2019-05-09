@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ByteBros.Common.Variables
+namespace ByteBros.Variables
 {
     [CreateAssetMenu(menuName = "Variable/Boolean")]
     public class BoolVariable : Variable<bool>

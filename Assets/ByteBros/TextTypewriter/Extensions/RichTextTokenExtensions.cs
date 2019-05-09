@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using ByteBros.Common.RichText;
+using ByteBros.TextTypewriter.RichText;
 
 namespace ByteBros.Typewriter.Extensions
 {

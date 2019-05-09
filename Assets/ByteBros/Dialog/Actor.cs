@@ -1,6 +1,4 @@
-﻿using ByteBros.Common.Events;
-using ByteBros.Common.Variables;
-using ByteBros.Typewriter;
+﻿using ByteBros.Typewriter;
 using UnityEngine;
 
 namespace ByteBros.Dialog

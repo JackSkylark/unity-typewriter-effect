@@ -1,4 +1,4 @@
-﻿using ByteBros.Common.Variables;
+﻿using ByteBros.Variables;
 using UnityEngine;
 
 namespace ByteBros.Typewriter.Examples

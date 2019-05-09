@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ByteBros.Common.Variables
+namespace ByteBros.Variables
 {
     [CreateAssetMenu(menuName = "Variable/String")]
     public class StringVariable : Variable<string>
