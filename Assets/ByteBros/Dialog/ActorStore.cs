@@ -5,8 +5,10 @@ using UnityEngine;
 
 namespace ByteBros.Dialog
 {
-    public class ActorStore : MonoBehaviour
+    [CreateAssetMenu(menuName = "Dialog/ActorStore")]
+    public class ActorStore : ScriptableObject
     {
+        [SerializeField]
         private Dictionary<string, Actor> _actors =
             new Dictionary<string, Actor>();
 

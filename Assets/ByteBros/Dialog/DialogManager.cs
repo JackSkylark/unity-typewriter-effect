@@ -23,6 +23,7 @@ namespace ByteBros.Dialog
             rumor = new Rumor(@"
 say ""actor1"" ""Hello Gannon! Fancy meeting <i>you</i> here.""
 say ""actor2"" ""Well this is a test after all.""
+say ""actor3"" ""Hello Everyone!""
 say ""actor1"" ""A <i>test</i>!? What do you mean??""
 say ""actor2"" ""The creator has chosen us to chat.""
 say ""actor2"" ""Please... let us continue our conversation.""
@@ -38,10 +39,6 @@ say ""actor1"" ""Good Bye.""
                     DialogLine.Value = (node as Say).EvaluateText(rumor);
                     OnNext.Raise();
                 }
-
-                //CurrentActorId.Value = rumor.State.Dialog.Keys.FirstOrDefault().ToString();
-                //DialogLine.Value = rumor.State.Dialog.Values.FirstOrDefault();
-                //OnNext.Raise();
             };
 
             rumor.OnFinish += () =>
@@ -55,15 +52,15 @@ say ""actor1"" ""Good Bye.""
             StartCoroutine(rumor.Start());
         }
 
+        public void AdvanceDialog()
+        {
+            rumor.Advance();
+        }
+
         // Update is called once per frame
         void Update()
         {
             rumor.Update(Time.deltaTime);
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                rumor.Advance();
-            }
         }
     }
 }

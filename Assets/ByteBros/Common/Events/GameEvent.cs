@@ -7,6 +7,7 @@ namespace ByteBros.Common.Events
     [CreateAssetMenu(menuName = "GameEvent")]
     public class GameEvent : ScriptableObject
     {
+        [SerializeField]
         private List<GameEventListener> listeners =
             new List<GameEventListener>();
 

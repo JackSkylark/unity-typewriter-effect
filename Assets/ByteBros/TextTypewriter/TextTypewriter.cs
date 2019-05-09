@@ -27,7 +27,6 @@ namespace ByteBros.Typewriter
         public UnityEvent PrintCompleted { get; } = new UnityEvent();
         public CharacterPrintedEvent CharacterPrinted { get; } = new CharacterPrintedEvent();
 
-
         private TextMeshProUGUI _textComponent;
         private float _defaultPrintDelay;
         private Coroutine _typeTextCoroutine;
@@ -56,7 +55,8 @@ namespace ByteBros.Typewriter
         public void Skip()
         {
             CleanupCoroutine();
-            
+            _textComponent.maxVisibleCharacters = int.MaxValue;
+            OnTypewriterCompleted();
         }
 
         private IEnumerator TypeTextCharByChar(string text)

@@ -15,7 +15,7 @@ namespace ByteBros.Common.Events
 
         private void OnDisable()
         {
-            Event.RegisterListener(this);
+            Event.UnregisterListener(this);
         }
 
         public void OnEventRaised()
